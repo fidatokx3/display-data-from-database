@@ -1,0 +1,9 @@
+ $sql = "SELECT * FROM `orderlist` where  p_time = '$date2' " ;
+ 
+$result = $link->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "বাজার: " . $row["p_name"]. " - দাম: " . $row["p_price"]. "<br>";
+  }
